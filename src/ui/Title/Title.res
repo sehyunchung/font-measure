@@ -15,8 +15,6 @@ let title = {
       ),
     ),
     textAlign(center),
-    margin(5.->rem),
-    letterSpacing(-0.05->em),
     fontSize(3.->rem),
   })
 }
