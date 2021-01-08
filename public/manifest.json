@@ -1,6 +1,6 @@
 {
-  "short_name": "Reason React App",
-  "name": "Create React App Sample",
+  "short_name": "CRA + ReasonML/ReScript",
+  "name": "CRA + ReasonML/ReScript Sample",
   "icons": [
     {
       "src": "favicon.ico",
