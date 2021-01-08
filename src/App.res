@@ -23,5 +23,5 @@ module Styles = {
 
 @react.component
 let make = () => {
-  <div className={Styles.wrapper}> <Logo /> </div>
+  <div className={Styles.wrapper}> <Title> {"font-measure"->React.string} </Title> </div>
 }

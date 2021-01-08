@@ -16,8 +16,6 @@ S src
 B lib/bs/src
 S src/lib
 B lib/bs/src/lib
-S src/ui/Logo
-B lib/bs/src/ui/Logo
 S src/ui/Title
 B lib/bs/src/ui/Title
 ####BSB GENERATED: NO EDIT}
