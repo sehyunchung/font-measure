@@ -1,12 +1,7 @@
-open ReactDomExperimental
+let rootElement = ReactDOM.querySelector("#root");
 
-%%raw(`import './Index.css';`)
-
-switch createRootWithId("root") {
-| Some(root) => root->render(
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  )
-| None => ()
-}
+let () =
+  switch (rootElement) {
+  | Some(element) => ReactDOM.render(<App />, element)
+  | None => Js.log("#root element not found")
+  };

@@ -1,15 +1,13 @@
 {
-  "name": "my-rescript-app",
+  "name": "ferretto-status",
   "reason": {
     "react-jsx": 3
   },
-  "sources": {
-    "dir" : "src",
-    "subdirs" : true
-  },
-  "bsc-flags": [
-    "-bs-super-errors",
-    "-bs-no-version-header"
+  "sources": [
+    {
+      "dir": "src",
+      "subdirs": true
+    }
   ],
   "package-specs": [
     {
@@ -20,11 +18,20 @@
   "suffix": ".bs.js",
   "namespace": true,
   "bs-dependencies": [
-    "reason-react"
+    "reason-react",
+    "bs-css",
+    "bs-css-emotion"
   ],
-  "bs-dev-dependencies": [
-    "@glennsl/bs-jest",
-    "bs-react-testing-library"
-  ],
-  "refmt": 3
+  "bs-dev-dependencies": [],
+  "ppx-flags": [],
+  "refmt": 3,
+  "warnings": {
+    "error": "+5",
+    "number": "-44"
+  },
+  "bsc-flags": [
+    "-bs-super-errors",
+    "-bs-no-version-header",
+    "-open Belt"
+  ]
 }

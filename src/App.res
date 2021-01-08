@@ -1,24 +1,27 @@
-%%raw(`import './App.css';`)
+module Styles = {
+  open Css
 
-@bs.module("./logo.svg") external logo: string = "default"
+  let wrapper = style(list{
+    background(`000`->hex),
+    padding(zero),
+    margin(zero),
+    height(100.->pct),
+    width(100.->pct),
+    overflow(auto),
+    display(#flex),
+    justifyContent(center),
+    alignItems(center),
+    flexDirection(column),
+  })
+
+  global(
+    `html, body, #root`,
+    list{padding(zero), margin(zero), height(100.->pct), width(100.->pct)},
+  )
+  global(`*`, list{boxSizing(#borderBox)})
+}
 
 @react.component
 let make = () => {
-  <div className="App">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>
-        {React.string("Edit ")}
-        <code> {React.string("src/App.js")} </code>
-        {React.string(" and save to reload.")}
-      </p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer">
-        {React.string("Learn React")}
-      </a>
-    </header>
-  </div>
+  <div className={Styles.wrapper}> <Logo /> </div>
 }
