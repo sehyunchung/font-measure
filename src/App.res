@@ -2,7 +2,6 @@ module Styles = {
   open Css
 
   let wrapper = style(list{
-    background(`000`->hex),
     padding(zero),
     margin(zero),
     height(100.->pct),
@@ -12,6 +11,7 @@ module Styles = {
     justifyContent(center),
     alignItems(center),
     flexDirection(column),
+    color(`000`->hex),
   })
 
   global(
