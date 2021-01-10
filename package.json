@@ -19,15 +19,16 @@
     "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   },
   "scripts": {
-    "start": "concurrently \"yarn bsb\" \"craco start\"",
+    "start:re": "bsb -make-world -w",
+    "start:cra": "craco start",
+    "start": "concurrently \"yarn start:re\" \"yarn start:cra\"",
     "build": "yarn bsb:build && craco build",
     "build:styles": "tailwind build src/index.css -o src/tailwind.css",
-    "test": "craco test",
-    "eject": "react-scripts eject",
-    "start:re": "bsb -clean-world -make-world -w",
     "bsb:build": "bsb -make-world",
     "bsb:clean": "bsb -clean",
-    "postinstall": "yarn bsb:build"
+    "postinstall": "yarn bsb:build",
+    "test": "craco test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
