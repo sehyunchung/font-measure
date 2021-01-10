@@ -1,2 +1,2 @@
 @react.component
-let make = (~children) => <h1 className=%tw("text-5xl font-black")> children </h1>
+let make = (~children) => <h1 className=%tw("font-mono text-5xl font-extrabold")> children </h1>

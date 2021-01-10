@@ -1,15 +1,18 @@
-'use strict';
 
-var React = require("react");
+
+import * as React from "react";
 
 function Title(Props) {
   var children = Props.children;
   return React.createElement("h1", {
-              className: "text-5xl font-black"
+              className: "font-mono text-5xl font-extrabold"
             }, children);
 }
 
 var make = Title;
 
-exports.make = make;
+export {
+  make ,
+  
+}
 /* react Not a pure module */

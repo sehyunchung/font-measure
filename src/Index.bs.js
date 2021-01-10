@@ -1,9 +1,9 @@
-'use strict';
 
-var React = require("react");
-var ReactDom = require("react-dom");
-var Caml_option = require("bs-platform/lib/js/caml_option.js");
-var App$FontMeasure = require("./App.bs.js");
+
+import * as React from "react";
+import * as ReactDom from "react-dom";
+import * as Caml_option from "bs-platform/lib/es6/caml_option.js";
+import * as App$FontMeasure from "./App.bs.js";
 
 var rootElement = document.querySelector("#root");
 
@@ -15,5 +15,8 @@ if (rootElement == null) {
 
 var rootElement$1 = (rootElement == null) ? undefined : Caml_option.some(rootElement);
 
-exports.rootElement = rootElement$1;
+export {
+  rootElement$1 as rootElement,
+  
+}
 /* rootElement Not a pure module */
