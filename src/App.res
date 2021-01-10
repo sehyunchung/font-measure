@@ -2,7 +2,6 @@ module Styles = {
   open Css
 
   let wrapper = style(list{
-    background(`000`->hex),
     padding(zero),
     margin(zero),
     height(100.->pct),
@@ -12,6 +11,7 @@ module Styles = {
     justifyContent(center),
     alignItems(center),
     flexDirection(column),
+    color(`000`->hex),
   })
 
   global(
@@ -23,5 +23,20 @@ module Styles = {
 
 @react.component
 let make = () => {
-  <div className={Styles.wrapper}> <Title> {"font-measure"->React.string} </Title> </div>
+  let (value, setValue) = React.useState(() => "hello")
+
+  <div className={Styles.wrapper}>
+    <Title> {"font-measure"->React.string} </Title>
+    <input
+      type_="text"
+      autoFocus=true
+      value={value}
+      placeholder="hey"
+      onChange={ev => {
+        let value = ReactEvent.Form.target(ev)["value"]
+        setValue(_ => value)
+      }}
+    />
+    <div> {value->React.string} </div>
+  </div>
 }

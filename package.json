@@ -8,6 +8,7 @@
     "bs-css-emotion": "1.2.0",
     "bs-platform": "8.2.0",
     "concurrently": "5.3.0",
+    "font-measure": "^1.2.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",

@@ -1,7 +1,6 @@
 let title = {
   open Css
   style(list{
-    color("fff"->hex),
     fontFamily(
       #custom(
         `
