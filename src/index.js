@@ -1,1 +1,2 @@
-import './Index.bs'
+import "./index.css";
+import "./Index.bs";

@@ -3,27 +3,32 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@rescripts/cli": "0.0.14",
-    "@rescripts/rescript-env": "0.0.12",
+    "@craco/craco": "^6.0.0",
+    "@tailwindcss/postcss7-compat": "^2.0.2",
+    "autoprefixer": "^9",
     "bs-css-emotion": "1.2.0",
     "bs-platform": "8.2.0",
     "concurrently": "5.3.0",
     "font-measure": "^1.2.2",
+    "postcss": "^7",
+    "postcss-cli": "^8.3.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
-    "reason-react": "0.9.1"
+    "reason-react": "0.9.1",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   },
   "scripts": {
-    "start": "concurrently \"yarn bsb\" \"yarn start:rescripts\"",
-    "build": "yarn bsb:build && rescripts build",
-    "test": "rescripts test",
-    "eject": "react-scripts eject",
-    "bsb": "bsb -make-world -w",
-    "start:rescripts": "rescripts start",
+    "start:re": "bsb -make-world -w",
+    "start:cra": "craco start",
+    "start": "concurrently \"yarn start:re\" \"yarn start:cra\"",
+    "build": "yarn bsb:build && craco build",
+    "build:styles": "tailwind build src/index.css -o src/tailwind.css",
     "bsb:build": "bsb -make-world",
     "bsb:clean": "bsb -clean",
-    "postinstall": "yarn bsb:build"
+    "postinstall": "yarn bsb:build",
+    "test": "craco test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -40,7 +45,7 @@
       "last 1 safari version"
     ]
   },
-  "rescripts": [
-    "env"
-  ]
+  "devDependencies": {
+    "@dylanirlbeck/tailwind-ppx": "^0.8.4"
+  }
 }

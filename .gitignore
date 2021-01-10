@@ -28,3 +28,4 @@ lib/
 .merlin
 
 .eslintcache
+.tailwind_ppx_cache
