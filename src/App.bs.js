@@ -1,64 +1,8 @@
+'use strict';
 
-
-import * as Css from "bs-css-emotion/src/Css.js";
-import * as Curry from "bs-platform/lib/es6/curry.js";
-import * as React from "react";
-import * as Title$FerrettoStatus from "./ui/Title/Title.bs.js";
-
-var wrapper = Curry._1(Css.style, {
-      hd: Css.padding(Css.zero),
-      tl: {
-        hd: Css.margin(Css.zero),
-        tl: {
-          hd: Css.height(Css.pct(100)),
-          tl: {
-            hd: Css.width(Css.pct(100)),
-            tl: {
-              hd: Css.overflow(Css.auto),
-              tl: {
-                hd: Css.display("flex"),
-                tl: {
-                  hd: Css.justifyContent(Css.center),
-                  tl: {
-                    hd: Css.alignItems(Css.center),
-                    tl: {
-                      hd: Css.flexDirection(Css.column),
-                      tl: {
-                        hd: Css.color(Css.hex("000")),
-                        tl: /* [] */0
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    });
-
-Curry._2(Css.$$global, "html, body, #root", {
-      hd: Css.padding(Css.zero),
-      tl: {
-        hd: Css.margin(Css.zero),
-        tl: {
-          hd: Css.height(Css.pct(100)),
-          tl: {
-            hd: Css.width(Css.pct(100)),
-            tl: /* [] */0
-          }
-        }
-      }
-    });
-
-Curry._2(Css.$$global, "*", {
-      hd: Css.boxSizing("borderBox"),
-      tl: /* [] */0
-    });
-
-var Styles = {
-  wrapper: wrapper
-};
+var Curry = require("bs-platform/lib/js/curry.js");
+var React = require("react");
+var Title$FontMeasure = require("./ui/Title/Title.bs.js");
 
 function App(Props) {
   var match = React.useState(function () {
@@ -66,11 +10,12 @@ function App(Props) {
       });
   var setValue = match[1];
   var value = match[0];
-  return React.createElement("div", {
-              className: wrapper
-            }, React.createElement(Title$FerrettoStatus.make, {
+  return React.createElement(React.Fragment, {
+              children: null
+            }, React.createElement(Title$FontMeasure.make, {
                   children: "font-measure"
                 }), React.createElement("input", {
+                  className: "text-xl",
                   autoFocus: true,
                   placeholder: "hey",
                   type: "text",
@@ -86,9 +31,5 @@ function App(Props) {
 
 var make = App;
 
-export {
-  Styles ,
-  make ,
-  
-}
-/* wrapper Not a pure module */
+exports.make = make;
+/* react Not a pure module */

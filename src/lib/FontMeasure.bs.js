@@ -1,4 +1,4 @@
-
+'use strict';
 
 
 var defaultOptions = {
@@ -13,8 +13,5 @@ var defaultOptions = {
   lower: "x"
 };
 
-export {
-  defaultOptions ,
-  
-}
+exports.defaultOptions = defaultOptions;
 /* No side effect */
